@@ -9,7 +9,7 @@ class MyClient(discord.Client):
             return
 
         for attachment in message.attachments:
-            if attachment.url.lower().endswith('heic'):
+            if attachment.url.lower().endswith('.heic') or attachment.url.lower().endswith('heif'):
                 in_filename = "./tmp/" + str(attachment.id) + ".HEIC"
                 out_filename = "./tmp/" + str(attachment.id) + ".jpg"
                 # save file
