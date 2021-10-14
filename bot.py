@@ -1,5 +1,4 @@
 import discord, os, subprocess
-from secrets import BOT_TOKEN
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -28,4 +27,4 @@ if not os.path.exists("./tmp"):
     os.makedirs("./tmp")
 
 client = MyClient()
-client.run(BOT_TOKEN)
+client.run(os.environ.get("DISCORD_TOKEN"))
