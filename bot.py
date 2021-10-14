@@ -1,5 +1,6 @@
 import discord, os, subprocess
 
+
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as', self.user)
@@ -9,8 +10,8 @@ class MyClient(discord.Client):
             return
 
         for attachment in message.attachments:
-            if attachment.url.lower().endswith('.heic') or attachment.url.lower().endswith('heif'):
-                in_filename = "./tmp/" + str(attachment.id) + ".HEIC"
+            if attachment.url.lower().endswith('.heic') or attachment.url.lower().endswith('.heif'):
+                in_filename = "./tmp/" + str(attachment.id) + ".HEIC"  # store all files with .HEIC by default
                 out_filename = "./tmp/" + str(attachment.id) + ".jpg"
                 # save file
                 await attachment.save(in_filename)
