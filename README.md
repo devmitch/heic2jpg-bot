@@ -10,13 +10,12 @@ or convert them manually to a JPEG.
 
 The bot will look for the Discord token under the environment variable `DISCORD_TOKEN`. On linux:
 
-`export DISCORD_TOKEN=yourtokenhere`
-
-`python3 -m pip install -r requirements.txt`
-
-`sudo apt install libheif-examples`
-
-`python3 bot.py`
+```
+$ export DISCORD_TOKEN=yourtokenhere
+$ python3 -m pip install -r requirements.txt
+$ sudo apt install libheif-examples
+$ python3 bot.py
+```
 
 ## Notes
 `Procfile`, `Aptfile` and `runtime.txt` are Heroku specific files, you do not need them to run/deploy the bot if you are not using Heroku.
