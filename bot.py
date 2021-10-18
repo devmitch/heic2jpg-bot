@@ -15,7 +15,7 @@ class MyClient(discord.Client):
                 out_filename = "./tmp/" + str(attachment.id) + ".jpg"
                 # save file
                 await attachment.save(in_filename)
-                # save file, send stdout output to /dev/null
+                # convert file, send stdout output to /dev/null
                 subprocess.run(["heif-convert", "%s" % in_filename, "%s" % out_filename], stdout=subprocess.DEVNULL)
                 # upload file to same channel that send .heic file
                 await message.channel.send(file=discord.File(out_filename), reference=message)
